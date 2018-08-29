@@ -1,0 +1,26 @@
+#!/usr/bin/ruby
+# encoding: utf-8
+
+require "rubygems"
+require 'thor'
+require './zipbruteforce'
+require 'highline'
+
+class CLI < Thor
+  
+  option :secret, desc: 'TXT file with passwords used in the brute-force test'
+  desc "crack FILE", "Apply brute force password cracking to file"
+  def crack(file)
+    if options[:secret]
+      secret = options[:secret]
+    else
+      secret = './secret.txt'
+    end
+
+    say "\n[+] cracking...\n\n"
+    Forensic::Zip::Bruteforce.new(file, secret).crack
+  end
+  
+end
+ 
+CLI.start(ARGV)
