@@ -14,13 +14,13 @@ Usage
 Simple use.
 ```shell
 cd zipbruteforce
-ruby ./zipbruteforce <FILE_NAME>
+ruby ./zipbruteforce crack <FILE_NAME>
 ```
 
 List of custom passwords.
 ```shell
 cd zipbruteforce
-ruby ./zipbruteforce <FILE_NAME> --secret <SECRET_LIST>
+ruby ./zipbruteforce crack <FILE_NAME> --secret <SECRET_LIST>
 ```
 
 
