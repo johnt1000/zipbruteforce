@@ -1,9 +1,12 @@
 #!/usr/bin/ruby
 # encoding: utf-8
 
+path = './'
+path += File.dirname(__FILE__)
+
 require "rubygems"
 require 'thor'
-require './zipbruteforce'
+require path.concat('/zipbruteforce')
 require 'highline'
 
 class CLI < Thor
@@ -14,7 +17,7 @@ class CLI < Thor
     if options[:secret]
       secret = options[:secret]
     else
-      secret = './secret.txt'
+      secret = path.concat('/secret.txt')
     end
 
     say "\n[+] cracking...\n\n"

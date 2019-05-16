@@ -4,7 +4,6 @@ require 'progress_bar'
 require 'highline'
 require "highline/import"
 
-
 module Forensic
   module Zip
     class Bruteforce
